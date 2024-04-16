@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Carousel = ({ images, initialRatings }) => {
+const Carousel = ({ images, initialRatings, description }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const numImages = 4; // Number of images to display at a time
 
@@ -23,7 +23,9 @@ const Carousel = ({ images, initialRatings }) => {
         {images.slice(currentIndex, currentIndex + numImages).map((imageUrl, index) => (
           <ImageWithRating key={index}>
             <Image src={imageUrl} alt={`Carousel Image ${currentIndex + index}`} />
-            <RatingLabel>Rating: {initialRatings[currentIndex + index]}</RatingLabel>
+            <RatingLabel>Rating: {initialRatings[currentIndex + index]}<br/>
+            Description: {description[currentIndex+index]}
+            </RatingLabel>
           </ImageWithRating>
         ))}
       </ImageContainer>
