@@ -2,45 +2,10 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: #0056b3;
   background-image: url('https://images.unsplash.com/photo-1518331539918-7a2dbf839306?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.top-bar {
-  display: flex;
-  justify-content: flex-end;
-  top: 0;
-  padding: 1rem;
-  background-color: rgba(240, 0, 0, 0.8); /* Semi-transparent background */
-}
-
-.button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-left: 1rem;
-}
-
-.button:hover {
-  background-color: #0056b3;
-}
-
-.main-content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main-image {
-  max-width: 100%;
-  max-height: 100%;
-  /* Remove or comment out this line */
-}

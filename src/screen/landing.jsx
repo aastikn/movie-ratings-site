@@ -1,36 +1,13 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import TopBar from '../components/topbar';
+import './landing.css'
 
-const TopBar = () => {
-  const handleProfileClick = () => {
-    // history.push('/profile');
-  };
 
-  const handleRatingClick = () => {
-    // history.push('/ratings/create');
-  };
-
-  const handleReviewsClick = () => {
-    // history.push('/reviews');
-  };
-
+const LandingPage = () => {
   return (
-    <div className="top-bar">
-      <button className="button" onClick={handleProfileClick}>
-        User Profile
-      </button>
-      <Link to="/ratings">
-        <button className="button" onClick={handleRatingClick}>
-          Create Rating
-        </button>
-      </Link>
-      <Link to="/gallery">
-        <button className="button" onClick={handleReviewsClick}>
-          View Reviews
-        </button>
-      </Link>
+    <div className='container'>
+      <TopBar />
     </div>
   );
 };
-
-export default TopBar;
+export default LandingPage;
