@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ratingSubmission.css';
+import axios from 'axios';
 
 const MovieRatingsPage = () => {
   const [movies, setMovies] = useState([]);
@@ -17,14 +18,31 @@ const MovieRatingsPage = () => {
     });
   };
 
-  const handleAddMovie = () => {
-    setMovies([...movies, newMovie]);
-    setNewMovie({
-      name: '',
-      imageUrl: '',
-      rating: 0,
-      description: '',
-    });
+  // const handleAddMovie = () => {
+  //   setMovies([...movies, newMovie]);
+  //   setNewMovie({
+  //     name: '',
+  //     imageUrl: '',
+  //     rating: 0,
+  //     description: '',
+  //   });
+
+  // };
+
+  const handleAddMovie = async () => {
+    try {
+      const response = await axios.post('http://localhost:3000/api/ratings'. newMovie);
+      console.log('Movie added successfully:', response.data);
+      setMovies([...movies, response.data]);
+      setNewMovie({
+        name: '',
+        imageUrl: '',
+        rating: 0,
+        description: '',
+      });
+    } catch (error) {
+      console.error('Error adding movie:', error);
+    }
   };
 
   return (
