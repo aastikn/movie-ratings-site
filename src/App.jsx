@@ -9,12 +9,13 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 
 function App() {
   const location = useLocation();
-  return (
+  return (<>
     <Routes location={location} key={location.pathname}>
       <Route path="/" element={<LandingPage />} />
       <Route path="/ratings" element={<MovieRatingsPage />} />
       <Route path="/gallery" element={<MovieGallery />} />
     </Routes>
+    </>
   )
 }
 
