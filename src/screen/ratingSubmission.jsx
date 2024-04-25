@@ -5,10 +5,10 @@ import axios from 'axios';
 const MovieRatingsPage = () => {
   const [movies, setMovies] = useState([]);
   const [newMovie, setNewMovie] = useState({
-    name: '',
+    movieName: '',
     imageUrl: '',
     rating: 0,
-    description: '',
+    review: '',
   });
 
   const handleInputChange = (e) => {
@@ -24,21 +24,27 @@ const MovieRatingsPage = () => {
   //     name: '',
   //     imageUrl: '',
   //     rating: 0,
-  //     description: '',
+  //     review: '',
   //   });
 
   // };
 
   const handleAddMovie = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/ratings'. newMovie);
+      // const response = await axios.post('http://localhost:3000/api/ratings'. newMovie);
+      const response = await axios.post('http://localhost:3000/api/ratings', JSON.stringify(newMovie), {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
       console.log('Movie added successfully:', response.data);
+      window.alert("Movie added");
       setMovies([...movies, response.data]);
       setNewMovie({
-        name: '',
+        movieName: '',
         imageUrl: '',
         rating: 0,
-        description: '',
+        review: '',
       });
     } catch (error) {
       console.error('Error adding movie:', error);
@@ -53,8 +59,8 @@ const MovieRatingsPage = () => {
           <label className="label">Movie Name:</label>
           <input
             type="text"
-            name="name"
-            value={newMovie.name}
+            name="movieName"
+            value={newMovie.movieName}
             onChange={handleInputChange}
             className="input"
           />
@@ -82,10 +88,10 @@ const MovieRatingsPage = () => {
           />
         </div>
         <div className="input-group">
-          <label className="label">Description:</label>
+          <label className="label">review:</label>
           <textarea
-            name="description"
-            value={newMovie.description}
+            name="review"
+            value={newMovie.review}
             onChange={handleInputChange}
             className="textarea"
           ></textarea>
@@ -94,18 +100,18 @@ const MovieRatingsPage = () => {
           Add Movie
         </button>
       </div>
-      <div className="movie-list">
+      {/* <div className="movie-list">
         {movies.map((movie, index) => (
           <div key={index} className="movie">
-            <img src={movie.imageUrl} alt={movie.name} className="movie-image" />
+            <img src={movie.imageUrl} alt={movie.movieName} className="movie-image" />
             <div className="movie-info">
-              <h3 className="movie-name">{movie.name}</h3>
+              <h3 className="movie-name">{movie.movieName}</h3>
               <p className="movie-rating">Rating: {movie.rating}/10</p>
-              {movie.description && <p className="movie-description">{movie.description}</p>}
+              {movie.review && <p className="movie-review">{movie.review}</p>}
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
