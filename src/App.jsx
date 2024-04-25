@@ -11,13 +11,12 @@ import SearchPage from './screen/search'
 function App() {
   const location = useLocation();
   return (<>
-    {/* <Routes location={location} key={location.pathname}>
+    <Routes location={location} key={location.pathname}>
       <Route path="/" element={<LandingPage />} />
       <Route path="/ratings" element={<MovieRatingsPage />} />
       <Route path="/gallery" element={<MovieGallery />} />
       <Route path="/search" element={<SearchPage />} />
-    </Routes> */}
-    <SearchPage />
+    </Routes>
     </>
   )
 }

@@ -54,7 +54,8 @@ const SearchPage = ({ movieList }) => {
 //   };
 const handleSearch = () => {
     const foundMovies = movieRatings.filter(rating =>
-      rating.review.toLowerCase().includes(searchTerm.toLowerCase())
+      (rating.review.toLowerCase().includes(searchTerm.toLowerCase())
+      |rating.movieName.toLowerCase().includes(searchTerm.toLowerCase()))
     );
     setSearchResult(foundMovies);
   };
