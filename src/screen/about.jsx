@@ -6,7 +6,8 @@ const AboutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-`;
+
+  `;
 
 const Title = styled.h1`
 color: #ebb666;
