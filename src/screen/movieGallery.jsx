@@ -27,6 +27,7 @@ const Title = styled.div`
 const StyledButton = styled.button`
 padding: 0.5rem 1rem;
 margin-top:5rem;
+margin-bottom:2rem;
 font-size: 1rem;
 background-color: #ebb666;
 color: #1f1b12;

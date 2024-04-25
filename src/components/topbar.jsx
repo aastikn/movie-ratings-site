@@ -32,7 +32,7 @@ const Button = styled.button`
 
 // Component
 const TopBar = () => {
-  const handleProfileClick = () => {
+  const handleFindClick = () => {
     // history.push('/profile');
   };
 
@@ -46,9 +46,11 @@ const TopBar = () => {
 
   return (
     <TopBarContainer>
-      <Button onClick={handleProfileClick}>
-        User Profile
+      <Link to="/search">
+      <Button onClick={handleFindClick}>
+       Find Movie
       </Button>
+      </Link>
       <Link to="/ratings">
         <Button onClick={handleRatingClick}>
           Create Rating

@@ -28,6 +28,7 @@ const StyledImageWithRating = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height:700px;
   border: 2px solid #ebb666;
   transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
   &:hover {
@@ -66,7 +67,10 @@ const StyledButton = styled.button`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #1f1b12;
+    color: #ebb666;
+    border: none;
+
   }
 
   &:not(:last-child) {
