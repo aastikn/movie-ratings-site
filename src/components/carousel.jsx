@@ -6,17 +6,21 @@ const StyledCarouselContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 600px;
+  max-height: 80vw;
   width: 100%;
 `;
 
 const StyledImageContainer = styled.div`
   width: 100%;
   max-width: 1200px;
-  height: 450px;
+  max-height: 800px
+  height: 70%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
+  overflow: hidden;
+  padding:10rem;
+
 `;
 
 
@@ -26,21 +30,9 @@ const StyledImageWithRating = styled.div`
   align-items: center;
   border: 2px solid #ebb666;
   transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
-
-  ${(props) =>
-    props.isClicked &&
-    css`
-      transform: scale(1.2);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-    `}
-
   &:hover {
     background-color: #ebb666;
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 `;
 
@@ -48,7 +40,7 @@ const StyledImageWithRating = styled.div`
 
 const StyledImage = styled.img`
   width: 100%;
-  height: 350px;
+  height: 18vw;
   object-fit: cover;
 `;
 
@@ -57,7 +49,7 @@ const StyledRatingLabel = styled.span`
   margin-top: 0.5rem;
   overflow-wrap: normal;
   &:hover {
-    color: #1c1910
+    color: #242424
 
   }
 
@@ -81,6 +73,9 @@ const StyledButton = styled.button`
     margin-right: 0.5rem;
   }
 `;
+const Controls = styled.div`
+height:20%;
+`
 
 const Carousel = ({ images, initialRatings, description, movieNames }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -116,10 +111,13 @@ const Carousel = ({ images, initialRatings, description, movieNames }) => {
             </StyledImageWithRating>
           ))}
       </StyledImageContainer>
-      <div className="controls">
+      <div style={{height:'10px'}}>
+
+      </div>
+      <Controls>
         <StyledButton onClick={handlePrevClick}>Prev</StyledButton>
         <StyledButton onClick={handleNextClick}>Next</StyledButton>
-      </div>
+      </Controls>
     </StyledCarouselContainer>
   );
 };

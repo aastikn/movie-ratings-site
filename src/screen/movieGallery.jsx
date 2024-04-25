@@ -12,12 +12,13 @@ const Container = styled.div`
   width: 100vw;
   position: relative;
   top: 0;
-  background-color: #1c1910;
+  background-color: #242424;
 `;
 
 const Title = styled.div`
   font-size: 4rem;
   font-weight: bold;
+  margin-top: 5rem;
   margin-bottom: 2rem;
   color: #ebb666;
 
@@ -25,6 +26,7 @@ const Title = styled.div`
 
 const StyledButton = styled.button`
 padding: 0.5rem 1rem;
+margin-top:5rem;
 font-size: 1rem;
 background-color: #ebb666;
 color: #1f1b12;
@@ -34,10 +36,15 @@ cursor: pointer;
 transition: background-color 0.3s ease;
 
 &:hover {
-  background-color: #0056b3;
-}
-`;
+    background-color: #1f1b12;
+    color: #ebb666;
+    border: none;
 
+  }
+`;
+const Sizer = styled.div`
+height:fit-content;
+`
 const MovieGallery = () => {
   const [movieRatings, setMovieRatings] = useState([]);
 
@@ -58,12 +65,13 @@ const MovieGallery = () => {
   return (
     <Container>
       <Title>Movie Ratings</Title>
+      <Sizer>
       <Carousel
         movieNames={movieRatings.map((rating) => rating.movieName)}
         images={movieRatings.map((rating) => rating.imageUrl)}
         initialRatings={movieRatings.map((rating) => rating.rating)}
         description={movieRatings.map((rating) => rating.review)}
-      />
+      /></Sizer>                            
       <StyledButton onClick={fetchMovieRatings}>Refresh Ratings</StyledButton>
     </Container>
   );
