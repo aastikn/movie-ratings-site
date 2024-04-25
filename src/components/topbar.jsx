@@ -61,6 +61,11 @@ const TopBar = () => {
           View Reviews
         </Button>
       </Link>
+      <Link to="/about">
+        <Button onClick={handleReviewsClick}>
+          About
+        </Button>
+      </Link>
     </TopBarContainer>
   );
 };

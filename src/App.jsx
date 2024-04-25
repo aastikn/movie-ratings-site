@@ -7,6 +7,7 @@ import MovieGallery from './screen/movieGallery'
 import MovieRatingsPage from './screen/ratingSubmission'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import SearchPage from './screen/search'
+import AboutPage from './screen/about'
 
 function App() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function App() {
       <Route path="/ratings" element={<MovieRatingsPage />} />
       <Route path="/gallery" element={<MovieGallery />} />
       <Route path="/search" element={<SearchPage />} />
+      <Route path="/about" element={<AboutPage />} />
     </Routes>
     </>
   )
