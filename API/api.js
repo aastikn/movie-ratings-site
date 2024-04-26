@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB Atlas connection string
-const atlasUri = "mongodb+srv://aastikn:2kBw2sn0tfsXmGx6@cluster0.jtyu7a2.mongodb.net/"
+const atlasUri = "mongodb+srv://<username>:<password>@cluster0.jtyu7a2.mongodb.net/"
 
 
 // Connect to MongoDB Atlas
