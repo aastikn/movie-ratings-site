@@ -115,7 +115,7 @@ const Carousel = ({ images, initialRatings, description, movieNames }) => {
             </StyledImageWithRating>
           ))}
       </StyledImageContainer>
-      <div style={{height:'10px'}}>
+      <div style={{ height: '10px' }}>
 
       </div>
       <Controls>

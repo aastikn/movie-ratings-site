@@ -53,6 +53,7 @@ const SearchPage = ({ movieList }) => {
 //     console.log(searchResult);
 //   };
 const handleSearch = () => {
+  setSearchResult([]);
     const foundMovies = movieRatings.filter(rating =>
       (rating.review.toLowerCase().includes(searchTerm.toLowerCase())
       |rating.movieName.toLowerCase().includes(searchTerm.toLowerCase()))

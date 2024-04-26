@@ -18,7 +18,7 @@ const Container = styled.div`
 const Title = styled.div`
   font-size: 4rem;
   font-weight: bold;
-  margin-top: 5rem;
+  margin-top: 10rem;
   margin-bottom: 2rem;
   color: #ebb666;
 

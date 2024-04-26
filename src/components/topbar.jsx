@@ -8,14 +8,15 @@ const TopBarContainer = styled.div`
   justify-content: flex-end;
   width: 100vw;
   top: 0;
-  background-color: #ebb666; /* Semi-transparent background */
+  background-color: rgba(253, 255, 193, 0); /* Semi-transparent background */
 `;
 
-const Button = styled.button`
+const Button = styled.button`                                                     
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  background-color: #322e2c;
-  color: #ebb666;
+  background-color: #eeca9f;
+    color: #212121;
+  font-weight: 600; /* Increased font weight */
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -23,13 +24,13 @@ const Button = styled.button`
   margin: 1rem;
 
   &:hover {
-    background-color: #ebb666;
-    color: #1c1910;
+    background-color: #212121;
+    color: #eeca9f;
+
     border: 1px solid #1e1b12;
 
   }
 `;
-
 // Component
 const TopBar = () => {
   const handleFindClick = () => {
